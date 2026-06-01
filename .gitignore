@@ -1,0 +1,82 @@
+# ── Environment & Secrets ─────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+.installed.cfg
+
+# ── Virtual Environments ──────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Jupyter / IPython ────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Streamlit ────────────────────────────────
+.streamlit/secrets.toml
+
+# ── ML Model Weights & Caches ────────────────
+# Whisper model files
+*.pt
+*.bin
+*.safetensors
+# HuggingFace cache
+.cache/
+~/.cache/huggingface/
+
+# ── ChromaDB / Vector Store ───────────────────
+chroma_db/
+*.chroma
+vectorstore/
+
+# ── Audio / Video Downloads ───────────────────
+downloads/
+audio/
+*.mp3
+*.mp4
+*.wav
+*.m4a
+*.webm
+*.mkv
+
+# ── Transcripts & Intermediate Files ─────────
+transcripts/
+*.txt.tmp
+
+# ── Export Output ─────────────────────────────
+exports/
+output/
+*.pdf
+*.docx
+
+# ── Logs ─────────────────────────────────────
+*.log
+logs/
+
+# ── OS & Editor ──────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+.env
+.env.*

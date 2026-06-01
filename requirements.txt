@@ -1,0 +1,56 @@
+# ─────────────────────────────────────────────
+# AI Meeting Assistant — requirements.txt
+# Python >= 3.10 recommended
+# ─────────────────────────────────────────────
+
+# ── Audio / Video Acquisition ────────────────
+yt-dlp>=2024.4.9               # Download audio from YouTube URLs
+pydub>=0.25.1                  # Audio manipulation & format conversion
+ffmpeg-python>=0.2.0           # FFmpeg bindings (ffmpeg binary required separately)
+
+# ── Transcription (local Whisper) ────────────
+openai-whisper>=20231117       # Local Whisper ASR model
+torch>=2.2.0                   # PyTorch backend for Whisper
+torchaudio>=2.2.0              # Audio processing utilities for Torch
+numpy>=1.26.0,<2.0.0           # Numerical ops (Whisper dependency)
+
+# ── Translation (Hindi → English) ────────────
+transformers>=4.40.0           # HuggingFace Transformers (Helsinki-NLP models)
+sentencepiece>=0.2.0           # Tokeniser required by translation models
+sacremoses>=0.1.1              # Moses tokeniser used by some seq2seq models
+langdetect>=1.0.9              # Detect language before deciding to translate
+
+# ── LLM — Mistral via free API ───────────────
+langchain>=0.2.0               # LangChain core
+langchain-core>=0.2.0          # LCEL primitives (Runnables, prompts, parsers)
+langchain-community>=0.2.0     # Community integrations
+langchain-mistralai>=0.1.0     # LangChain Mistral integration
+mistralai>=0.4.0               # Official Mistral Python SDK
+
+# ── RAG — Embeddings & Vector Store ──────────
+chromadb>=0.5.0                # ChromaDB local vector store
+sentence-transformers>=2.7.0   # HuggingFace sentence embeddings (all-MiniLM etc.)
+langchain-huggingface>=0.0.3   # HuggingFaceEmbeddings wrapper for LangChain
+tiktoken>=0.6.0                # Token counting for chunking strategies
+
+# ── Text Splitting / Document Loaders ────────
+unstructured>=0.14.0           # Generic document loader
+python-docx>=1.1.0             # .docx upload support
+
+# ── Streamlit UI ─────────────────────────────
+streamlit>=1.35.0              # Main UI framework
+streamlit-chat>=0.1.1          # Chat message components
+watchdog>=4.0.0                # File-watcher for Streamlit hot-reload
+
+# ── Export — PDF & TXT ───────────────────────
+fpdf2>=2.7.9                   # Pure-Python PDF generation
+reportlab>=4.2.0               # Alternative PDF engine (richer formatting)
+Pillow>=10.3.0                 # Image support for PDF export
+
+# ── General Utilities ────────────────────────
+python-dotenv>=1.0.1           # Load .env for API keys
+requests>=2.32.0               # HTTP client
+tqdm>=4.66.0                   # Progress bars
+pydantic>=2.7.0                # Data validation (used by LangChain)
+tenacity>=8.3.0                # Retry logic for API calls
+loguru>=0.7.2                  # Structured logging
